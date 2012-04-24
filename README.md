@@ -1,13 +1,13 @@
 Twarchiver
 =====
 
-**Simple tweet archiver**
+**Simple tweet archiving utility**
 
 Written by Irving Y. Ruan — [irvingruan@gmail.com](irvingruan@gmail.com)
 
 ## About
 
-Twarchiver is a simple archiver utility that will fetch (up to 3,200) statuses of a user and generate a plaintext-style HTML overview of your tweets, their timestamps, and the permalinks to them. 
+Twarchiver is a simple archiving utility that will fetch (up to 3,200) statuses for a user and generate a plaintext-style HTML overview of your tweets, their timestamps, and the permalinks, if available, to them. 
 
 Twitter sets 3,200 statuses as the limit due to performance issues. See their [user timeline API rules](https://dev.twitter.com/docs/api/1/get/statuses/user_timeline) for more details.
 

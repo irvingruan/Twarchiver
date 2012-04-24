@@ -30,11 +30,15 @@ __author__ = 'Irving Y. Ruan <irvingruan@gmail.com'
 __version__ = '0.1b'
 
 import sys
+import os
 import twitter
 import operator
+import shutil
 from dateutil.parser import parse
 
 twitter_base_url = 'http://twitter.com'
+desktop_path = os.path.expanduser('~/Desktop/')
+
 tweets_data = {}
 
 def get_tweets(username):
@@ -110,6 +114,32 @@ def generate_html(username, tweets):
             
     html_output.write('</small></body></html>')
     html_output.close()
+    
+    try:
+        if os.path.exists(desktop_path + username + '.html'):
+            sys.stderr.write(username + '.html already exists. Recreate anyway? (y/n):')
+            key = 0
+            try:
+                key = sys.stdin.read(1)
+            except KeyboardInterrupt:
+                key = 0
+
+            if key == 'y':
+                os.remove(desktop_path + username +'.html')
+                shutil.move(os.getcwd() + '/' + username + '.html', desktop_path)
+                sys.stderr.write(username + '.html recreated on your Desktop.\n')
+            elif key == 'n':
+                os.remove(os.getcwd() + '/' + username +'.html') 
+            elif key == 0:
+                sys.stderr.write("\nError: keyboard interrupted.")
+                sys.exit(-1)
+        else:
+            shutil.move(os.getcwd() + '/' + username + '.html', desktop_path)
+            
+    except:
+        sys.stderr.write("Error: Unable to move %s.html to the Desktop.\n" % username)
+        sys.stderr.write("%s.html is located inside this directory.\n" % username)
+        sys.exit(-1)
     
 def main():
     
