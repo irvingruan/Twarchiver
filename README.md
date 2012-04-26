@@ -34,4 +34,4 @@ And Twarchiver will generate a HTML-formatted file of your tweets on your Deskto
 
 ## Legal
 
-Twarchiver is Copyright (c) 2012 Irving Ruan and BSD licensed. The full text of the license can be found in LICENSE.
+Twarchiver is Copyright (c) 2012 Irving Ruan and MIT licensed. The full text of the license can be found in LICENSE.
