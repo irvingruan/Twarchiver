@@ -22,7 +22,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 """
 
-__author__ = 'Irving Y. Ruan <irvingruan@gmail.com'
+__author__ = 'Irving Y. Ruan <irvingruan@gmail.com>'
 __version__ = '0.1'
 
 import sys
